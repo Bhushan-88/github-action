@@ -5,7 +5,7 @@ name: Auto Linter
 
 on: 
   push:
-    paths: *.py # if any python file is changed, the linter will run
+    paths: "*.py" # if any python file is changed, the linter will run
 
 jobs:
     code:
