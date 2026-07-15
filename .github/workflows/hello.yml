@@ -12,10 +12,9 @@ on:
 # jobs is an object so needs indentation
 #1st job
 jobs:
-  say-hello:
-    # Creaats an ephemeral container with ubuntu running 
-    runs-on: ubuntu-letest
-    # That ephemeral container will have steps to exicute, Hence name those steps and use run: , run has the command
+  say-hello: # Creaats an ephemeral container with ubuntu running 
+    runs-on: ubuntu-letest # That ephemeral container will have steps to exicute, Hence name those steps and use run: , run has the command
+    
     steps:
       - name: say hello to everyone
         run: echo "Hello Dosto"
