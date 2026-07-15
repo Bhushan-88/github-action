@@ -1,0 +1,20 @@
+# what is the goal of your workflow.
+# Goal: Whenever someone changes  the python code, the linter will run and check the code for any errors or warnings.
+# If there are any errors or warnings, it will fail the workflow and show the errors in the logs.
+name: Auto Linter
+
+on: 
+  push:
+    paths: *.py # if any python file is changed, the linter will run
+
+jobs:
+    code:
+        runs-on: ubuntu-latest
+        steps:
+           #this step will automatically clone the code from github current branch to the runner machine
+          - name: Checkout/Clone the code
+            uses: actions/checkout@v7
+            run: echo "Cloning the code from github"
+
+          - name: install linter
+            run: pip install ruff
