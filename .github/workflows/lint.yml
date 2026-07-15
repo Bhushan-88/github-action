@@ -8,11 +8,15 @@ on:
     paths: "*.py" # if any python file is changed, the linter will run
 
 jobs:
-  code:
+  code-linter:
     runs-on: ubuntu-latest
     steps:
       #this step will automatically clone the code from github current branch to the runner machine
       - name: Checkout/Clone the code
         uses: actions/checkout@v7
+
       - name: install linter
         run: pip install ruff
+
+      - name: Check the files for linting
+        run: ruff check . #this step will run the linter on all the files in the current directory and sub-directories
