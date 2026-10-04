@@ -18,5 +18,11 @@ jobs:
       - name: Install linter
         run: pip install ruff # this step will install the linter on the runner machine
 
+        # 2. Install and configure the specific Python version
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14' # this step will install the specific python version on the runner machine
+
       - name: Check the files for linting
         run: ruff check . #this step will run the linter on all the files in the current directory and sub-directories
